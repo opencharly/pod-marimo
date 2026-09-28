@@ -1,5 +1,7 @@
+version: 2026.232.0520
 marimo:
     candy:
+        version: 2026.146.1203
         description: |
             marimo reactive notebook + MCP server on port 2718 with GPU OSM analytics, Airflow deps, and the marimo-team skills set for AI agents
             Installs marimo (a reactive notebook server that also runs as an MCP
@@ -25,7 +27,7 @@ marimo:
             # checks dispatch — otherwise they SKIP with `unknown verb "mcp"`. (box/<distro>
             # adopts the matching @github pin via reconcile later — the deliberate cross-repo
             # lag; the R10 bed loads the LOCAL candy via the superproject override.)
-            - '@github.com/opencharly/plugin-mcp/candy/plugin-mcp:v2026.250.0721'
+            - '@github.com/opencharly/plugin-mcp/candy/plugin-mcp:v2026.242.0530'
         env:
             NVIDIA_PYTHON_PROJECT: "~/.pixi"
             LD_LIBRARY_PATH: "/usr/lib64"
