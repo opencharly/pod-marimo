@@ -1,7 +1,5 @@
-version: 2026.232.0520
 marimo:
     candy:
-        version: 2026.146.1203
         description: |
             marimo reactive notebook + MCP server on port 2718 with GPU OSM analytics, Airflow deps, and the marimo-team skills set for AI agents
             Installs marimo (a reactive notebook server that also runs as an MCP
