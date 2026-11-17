@@ -15,14 +15,16 @@ marimo:
             directory, the config line, and — at deploy scope — the live notebook
             UI plus the MCP endpoint on /mcp/server.
         require:
-            # The GPU stack pin must stay at or ahead of the CDI driver-shadowing fix
-            # (opencharly/layer-nvidia#22 / layer-cuda#19): layer-cuda v2026.290.2052 still
+            # The GPU stack pin must stay at or ahead of the CDI driver-shadowing fixes
+            # (opencharly/layer-nvidia#22 / layer-cuda#19 for the injected-lib shadowing, and
+            # layer-cuda#22 for the driver user-space that `cuda` reinstalls through nvidia-utils):
+            # layer-cuda v2026.290.2052 still
             # requires the PRE-FIX layer-nvidia commit (7766a9d0…), and a box that composes
             # this pod next to its own current GPU pins then resolves the same candy at two
             # refs and refuses the project —
             #   candy .../layer-nvidia resolved to multiple git tags with differing content
             #   within one scope (measured in opencharly/distro-cachyos, box=versa).
-            - '@github.com/opencharly/layer-cuda:v2026.320.2103'
+            - '@github.com/opencharly/layer-cuda:v2026.321.1520' # driver-strip release (layer-cuda#22)
             - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
             # plugin-mcp is the OUT-OF-TREE plugin that serves the `mcp:` check verb
             # (the github.com/modelcontextprotocol/go-sdk MCP CLIENT lives there, not in
