@@ -24,8 +24,8 @@ marimo:
             # refs and refuses the project —
             #   candy .../layer-nvidia resolved to multiple git tags with differing content
             #   within one scope (measured in opencharly/distro-cachyos, box=versa).
-            - '@github.com/opencharly/layer-cuda:v2026.321.1520' # driver-strip release (layer-cuda#22)
-            - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
+            - '@github.com/opencharly/layer-cuda:v2026.326.2259' # driver-strip release (layer-cuda#22)
+            - '@github.com/opencharly/layer-supervisord:v2026.314.0710'
             # plugin-mcp is the OUT-OF-TREE plugin that serves the `mcp:` check verb
             # (the github.com/modelcontextprotocol/go-sdk MCP CLIENT lives there, not in
             # charly's core check surface). This candy AUTHORS `mcp:` checks, so requiring
@@ -34,7 +34,7 @@ marimo:
             # checks dispatch — otherwise they SKIP with `unknown verb "mcp"`. (box/<distro>
             # adopts the matching @github pin via reconcile later — the deliberate cross-repo
             # lag; the R10 bed loads the LOCAL candy via the superproject override.)
-            - '@github.com/opencharly/plugin-mcp/candy/plugin-mcp:v2026.272.0329'
+            - '@github.com/opencharly/plugin-mcp/candy/plugin-mcp:v2026.314.0714'
         env:
             NVIDIA_PYTHON_PROJECT: "~/.pixi"
             LD_LIBRARY_PATH: "/usr/lib64"
