@@ -24,7 +24,10 @@ marimo:
             # refs and refuses the project —
             #   candy .../layer-nvidia resolved to multiple git tags with differing content
             #   within one scope (measured in opencharly/distro-cachyos, box=versa).
-            - '@github.com/opencharly/layer-cuda:v2026.326.2259' # driver-strip release (layer-cuda#22)
+            # NO `require: layer-cuda`: the pod takes its driver from the host through CDI, and the
+            # consumer CLASS decides whether the toolkit is composed — a class-2/3 BOX composes it,
+            # a class-1 box (this pod's CUDA rides its wheels) composes none
+            # (opencharly/opencharly#1291).
             - '@github.com/opencharly/layer-supervisord:v2026.314.0710'
             # plugin-mcp is the OUT-OF-TREE plugin that serves the `mcp:` check verb
             # (the github.com/modelcontextprotocol/go-sdk MCP CLIENT lives there, not in
